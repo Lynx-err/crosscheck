@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling>=1.24.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "crosscheck"
+version = "0.1.0"
+description = "Claim-level hallucination detection using disagreement across diverse small LLMs."
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "httpx>=0.27.0",
+  "pydantic>=2.7.0",
+  "PyYAML>=6.0.0",
+  "torch>=2.6.0",
+  "transformers>=4.49.0",
+]
+
+[project.scripts]
+crosscheck-pipeline = "crosscheck.cli:main"
+crosscheck-eval = "crosscheck.eval.run_eval:main"
+crosscheck-diagnostics = "crosscheck.eval.run_diagnostics:main"
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3.0",
+  "ruff>=0.5.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

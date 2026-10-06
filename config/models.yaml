@@ -1,0 +1,55 @@
+nli_model: cross-encoder/nli-deberta-v3-small
+models:
+  - id: llama-3.2-3b
+    provider: ollama
+    model_name: llama3.2:3b
+    base_url: http://localhost:11434/v1
+    parameter_size: 3.2B
+    api_key: ollama
+    role: primary
+    enabled: true
+  - id: qwen2.5-1.5b
+    provider: ollama
+    family: qwen
+    model_name: qwen2.5:1.5b
+    base_url: http://localhost:11434/v1
+    parameter_size: 1.5B
+    api_key: ollama
+    role: verifier
+    enabled: false
+  - id: qwen2.5-3b
+    provider: ollama
+    family: qwen
+    model_name: qwen2.5:3b
+    base_url: http://localhost:11434/v1
+    parameter_size: 3.1B
+    api_key: ollama
+    role: verifier
+    enabled: true
+  - id: qwen2.5-7b
+    provider: ollama
+    family: qwen
+    model_name: qwen2.5:7b
+    base_url: http://localhost:11434/v1
+    parameter_size: 7.6B
+    api_key: ollama
+    role: verifier
+    enabled: false
+  - id: phi-3.5-mini
+    provider: ollama
+    family: phi
+    model_name: phi3.5
+    base_url: http://localhost:11434/v1
+    parameter_size: 3.8B
+    api_key: ollama
+    role: verifier
+    enabled: true
+  - id: gemma-2-2b
+    provider: ollama
+    family: gemma
+    model_name: gemma2:2b
+    base_url: http://localhost:11434/v1
+    parameter_size: 2.6B
+    api_key: ollama
+    role: verifier
+    enabled: true

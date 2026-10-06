@@ -1,0 +1,27 @@
+# Virtual environments
+.venv/
+.venv-*/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Pytest
+.pytest_cache/
+
+# Ruff
+.ruff_cache/
+
+# Results / generated files
+results/
+
+# Environment variables / secrets
+.env
+.env.*
+
+# IDE
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
